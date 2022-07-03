@@ -52,7 +52,7 @@ int main()
     scanf("%d", &n);
     printf("Enter defective row and column\n");
     scanf("%d %d", &drow, &dcol);
-    tiling_board(0,0,drow,dcol,n);
+    chessboard(0,0,drow,dcol,n);
     for(i=0;i<n;i++)
     {
         for(j=0;j<n;j++)
