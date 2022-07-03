@@ -9,12 +9,12 @@ void chessboard(int trow, int tcol, int drow, int dcol,int size)
     int tileToUse=tile++;
     if(drow<=trow+qsize-1 && dcol<=tcol+qsize-1)
     {
-        tiling_board(trow,tcol,drow,dcol,qsize);
+        chessboard(trow,tcol,drow,dcol,qsize);
     }
     else
     {
         board[trow+qsize-1][tcol+qsize-1]=tileToUse;
-        tiling_board(trow,tcol,trow+qsize-1,tcol+qsize-1,qsize);
+        chessboard(trow,tcol,trow+qsize-1,tcol+qsize-1,qsize);
     }
     if(drow<=trow+qsize-1 && dcol>=tcol+qsize)
     {
