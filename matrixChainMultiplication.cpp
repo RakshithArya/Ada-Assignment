@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include<bits/stdc++.h>
+using namespace std;
 #define INF 9999
-int MatrixChainOrder(int arr[], int n)
+int MatrixChain(int arr[], int n)
 {
 	int p[n][n];
 	int i, j, k, l, q;
@@ -24,16 +24,17 @@ int MatrixChainOrder(int arr[], int n)
 	}
 	return p[1][n - 1];
 }
+
 int main()
 {
   int n;
-  printf("Enter the size of the array\n");
-  scanf("%d",&n);
+  cout<<"Enter the size of the array\n";
+  cin>>n;
   int arr[n];
   printf("Enter the array\n");
   for(int i=0;i<n;i++){
-  scanf("%d",&arr[i]);
+  cin>>arr[i];
 }
-  printf("The Minimum number of matrix multiplications is %d ",MatrixChainOrder(arr, n));
+  cout<<"The Minimum number of matrix multiplications is: "<<MatrixChain(arr, n);
 	return 0;
 }
