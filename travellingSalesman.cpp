@@ -1,37 +1,37 @@
-#include<stdio.h>
- 
+#include<bits/stdc++.h>
+using namespace std;
+
 int ary[10][10],completed[10],n,cost=0;
  
 void takeInput()
 {
 int i,j;
  
-printf("Enter the number of villages: ");
-scanf("%d",&n);
+cout<<"Enter the number of villages";
+cin>>n;
  
-printf("\nEnter the Cost Matrix\n");
- 
+cout<<"\nEnter the Cost Matrix\n";
 for(i=0;i < n;i++)
 {
-printf("\nEnter Elements of Row: %d\n",i+1);
+cout<<"\nEnter Elements of Row: "<<i+1<<endl;
  
 for( j=0;j < n;j++)
-scanf("%d",&ary[i][j]);
+cin>>ary[i][j];
  
 completed[i]=0;
 }
  
-printf("\n\nThe cost list is:");
+cout<<"\n\nThe cost list is:";
  
 for( i=0;i < n;i++)
 {
-printf("\n");
+cout<<endl;
  
 for(j=0;j < n;j++)
-printf("\t%d",ary[i][j]);
+cout<<"/t"<<ary[i][j];
 }
 }
-
+ 
 int least(int c)
 {
 int i,nc=999;
@@ -53,20 +53,20 @@ cost+=kmin;
  
 return nc;
 }
- 
+
 void mincost(int city)
 {
 int i,ncity;
  
 completed[city]=1;
  
-printf("%d--->",city+1);
+cout<<city+1<<"-->";
 ncity=least(city);
  
 if(ncity==999)
 {
 ncity=0;
-printf("%d",ncity+1);
+cout<<ncity+1;
 cost+=ary[city][ncity];
  
 return;
@@ -81,10 +81,9 @@ int main()
 {
 takeInput();
  
-printf("\n\nThe Path is:\n");
+cout<<"\n\nThe Path is:\n";
 mincost(0); 
  
-printf("\n\nMinimum cost is %d\n ",cost);
- 
+cout<<"\n\nMinimum cost is: "<<cost<<endl;
 return 0;
 }
