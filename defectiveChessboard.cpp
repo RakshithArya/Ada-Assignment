@@ -1,7 +1,7 @@
 #include<stdio.h>
 int tile=1;
 int board[20][20];
-void tiling_board(int trow, int tcol, int drow, int dcol,int size)
+void chessboard(int trow, int tcol, int drow, int dcol,int size)
 {
     if(size==1)
         return;
@@ -18,30 +18,30 @@ void tiling_board(int trow, int tcol, int drow, int dcol,int size)
     }
     if(drow<=trow+qsize-1 && dcol>=tcol+qsize)
     {
-        tiling_board(trow,tcol+qsize,drow,dcol,qsize);
+        chessboard(trow,tcol+qsize,drow,dcol,qsize);
     }
      else
     {
         board[trow+qsize-1][tcol+qsize]=tileToUse;
-        tiling_board(trow,tcol+qsize,trow+qsize-1,tcol+qsize,qsize);
+        chessboard(trow,tcol+qsize,trow+qsize-1,tcol+qsize,qsize);
     }
     if(drow>=trow+qsize && dcol<=tcol+qsize-1)
     {
-        tiling_board(trow+qsize,tcol,drow,dcol,qsize);
+        chessboard(trow+qsize,tcol,drow,dcol,qsize);
     }
     else
     {
         board[trow+qsize][tcol+qsize-1]=tileToUse;
-        tiling_board(trow+qsize,tcol,trow+qsize,tcol+qsize-1,qsize);
+        chessboard(trow+qsize,tcol,trow+qsize,tcol+qsize-1,qsize);
     }
     if(drow>=trow+qsize && dcol>=tcol+qsize)
     {
-        tiling_board(trow+qsize,tcol+qsize,drow,dcol,qsize);
+        chessboard(trow+qsize,tcol+qsize,drow,dcol,qsize);
     }
     else
     {
         board[trow+qsize][tcol+qsize]=tileToUse;
-        tiling_board(trow+qsize,tcol+qsize,trow+qsize,tcol+qsize,qsize);
+        chessboard(trow+qsize,tcol+qsize,trow+qsize,tcol+qsize,qsize);
     }
 }
 
